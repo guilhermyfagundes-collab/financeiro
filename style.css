@@ -1,0 +1,33 @@
+#central {
+   text-align: center;
+}
+
+.mensagem {
+    text-align: center;
+    border: 5px solid;
+}
+
+.mensagem-sucesso {
+    border-color: aqua;
+}
+
+.mensagem-erro {
+    border-color: blueviolet;
+    background-color: blue;
+    color: white;
+}
+
+.mensagem-erro {
+    width: 25%;
+    text-align: center;
+}
+
+body{
+    text-align: center;
+    align-items: center;
+    background-image:url(gui.jpg);
+}
+
+#sair{
+    color: black;
+}
