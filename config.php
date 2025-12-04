@@ -8,11 +8,13 @@ define('DB_PASS', 'mysql');
 
 // Conexão com o Banco de Dados
 try {
-    $conn = new PDO("mysql:host=".DB_HOST.";port=".DB_PORT.";dbname=".DB_NAME."; charset=utf8mb4",DB_USER,DB_PASS);
+    $conn = new PDO("mysql:host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME . "; charset=utf8mb4", DB_USER, DB_PASS);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    die("Erro na Conexão com o banco de dados: " . $e->getMessage
-    ());
+    die("Erro na Conexão com o banco de dados: " . $e->getMessage());
 }
 
-?>
+// Iniciar sesão se ainda não foi iniciada
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
